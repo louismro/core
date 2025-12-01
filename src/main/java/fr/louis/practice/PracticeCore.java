@@ -1,11 +1,11 @@
 package fr.louis.practice;
 
-import fr.louis.practice.commands.*;
-import fr.louis.practice.listeners.*;
-import fr.louis.practice.managers.*;
-import fr.louis.practice.utils.ConfigManager;
+// import fr.louis.practice.commands.*;
+// import fr.louis.practice.listeners.*;
+// import fr.louis.practice.managers.*;
+// import fr.louis.practice.utils.ConfigManager;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
+// import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
@@ -14,21 +14,20 @@ public class PracticeCore extends JavaPlugin {
     @Getter
     private static PracticeCore instance;
 
-    // Managers
-    private ConfigManager configManager;
-    private KnockbackManager knockbackManager;
-    private MatchManager matchManager;
-    private QueueManager queueManager;
-    private PartyManager partyManager;
-    private EloManager eloManager;
-    private StatisticsManager statisticsManager;
-    private SpectatorManager spectatorManager;
-    private EventManager eventManager;
-    private ArenaManager arenaManager;
-    private KitManager kitManager;
-    private CombatManager combatManager;
-    private ScoreboardManager scoreboardManager;
-    private DatabaseManager databaseManager;
+    // Managers - Temporarily commented for Java upgrade
+    // private ConfigManager configManager;
+    // private MatchManager matchManager;
+    // private QueueManager queueManager;
+    // private PartyManager partyManager;
+    // private EloManager eloManager;
+    // private StatisticsManager statisticsManager;
+    // private SpectatorManager spectatorManager;
+    // private EventManager eventManager;
+    // private ArenaManager arenaManager;
+    // private KitManager kitManager;
+    // private CombatManager combatManager;
+    // private ScoreboardManager scoreboardManager;
+    // private DatabaseManager databaseManager;
 
     @Override
     public void onEnable() {
@@ -36,40 +35,39 @@ public class PracticeCore extends JavaPlugin {
         
         // Chargement de la configuration
         saveDefaultConfig();
-        configManager = new ConfigManager(this);
+        // configManager = new ConfigManager(this);
         
         // Initialisation des managers
-        initializeManagers();
+        // initializeManagers();
         
         // Enregistrement des commandes
-        registerCommands();
+        // registerCommands();
         
         // Enregistrement des listeners
-        registerListeners();
+        // registerListeners();
         
         getLogger().info("PracticeCore a été activé avec succès!");
-        getLogger().info("Profil de knockback: " + getConfig().getString("knockback.profile"));
     }
 
     @Override
     public void onDisable() {
         // Sauvegarde des données
-        if (databaseManager != null) {
-            databaseManager.saveAll();
-            databaseManager.close();
-        }
+        // if (databaseManager != null) {
+        //     databaseManager.saveAll();
+        //     databaseManager.close();
+        // }
         
         // Fin de tous les matchs en cours
-        if (matchManager != null) {
-            matchManager.endAllMatches();
-        }
+        // if (matchManager != null) {
+        //     matchManager.endAllMatches();
+        // }
         
         getLogger().info("PracticeCore a été désactivé!");
     }
 
+    /*
     private void initializeManagers() {
         this.databaseManager = new DatabaseManager(this);
-        this.knockbackManager = new KnockbackManager(this);
         this.arenaManager = new ArenaManager(this);
         this.kitManager = new KitManager(this);
         this.eloManager = new EloManager(this);
@@ -121,4 +119,5 @@ public class PracticeCore extends JavaPlugin {
         pm.registerEvents(new PotionSplashListener(this), this);
         pm.registerEvents(new InventoryClickListener(this), this);
     }
+    */
 }
