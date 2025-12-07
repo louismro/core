@@ -1,0 +1,248 @@
+arenas:
+  arena1:
+    display-name: "&eArena 1"
+    icon: "GRASS"
+    pos1:
+      world: "world"
+      x: 0
+      y: 4
+      z: 0
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 50
+      y: 20
+      z: 50
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 10.5
+        y: -60
+        z: 25.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 40.5
+        y: -60
+        z: 25.5
+        yaw: -90
+        pitch: 0
+        
+  arena2:
+    display-name: "&bArena 2"
+    icon: "STONE"
+    pos1:
+      world: "world"
+      x: 100
+      y: 4
+      z: 0
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 150
+      y: 20
+      z: 50
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 110.5
+        y: -60
+        z: 25.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 140.5
+        y: -60
+        z: 25.5
+        yaw: -90
+        pitch: 0
+        
+  arena3:
+    display-name: "&cArena 3"
+    icon: "BRICK"
+    pos1:
+      world: "world"
+      x: 200
+      y: 4
+      z: 0
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 250
+      y: 20
+      z: 50
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 210.5
+        y: -60
+        z: 25.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 240.5
+        y: -60
+        z: 25.5
+        yaw: -90
+        pitch: 0
+        
+  arena4:
+    display-name: "&aArena 4"
+    icon: "SAND"
+    pos1:
+      world: "world"
+      x: 0
+      y: 4
+      z: 100
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 50
+      y: 20
+      z: 150
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 10.5
+        y: -60
+        z: 125.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 40.5
+        y: -60
+        z: 125.5
+        yaw: -90
+        pitch: 0
+        
+  arena5:
+    display-name: "&dArena 5"
+    icon: "QUARTZ_BLOCK"
+    pos1:
+      world: "world"
+      x: 100
+      y: 4
+      z: 100
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 150
+      y: 20
+      z: 150
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 110.5
+        y: -60
+        z: 125.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 140.5
+        y: -60
+        z: 125.5
+        yaw: -90
+        pitch: 0
+        
+  arena6:
+    display-name: "&6Arena 6"
+    icon: "GLOWSTONE"
+    pos1:
+      world: "world"
+      x: 200
+      y: 4
+      z: 100
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 250
+      y: 20
+      z: 150
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 210.5
+        y: -60
+        z: 125.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 240.5
+        y: -60
+        z: 125.5
+        yaw: -90
+        pitch: 0
+        
+  sumo:
+    display-name: "&9Sumo Arena"
+    icon: "SPONGE"
+    pos1:
+      world: "world"
+      x: 0
+      y: 4
+      z: 200
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 30
+      y: 10
+      z: 230
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 7.5
+        y: -60
+        z: 215.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 22.5
+        y: -60
+        z: 215.5
+        yaw: -90
+        pitch: 0
+        
+  builduhc:
+    display-name: "&6BuildUHC Arena"
+    icon: "COBBLESTONE"
+    pos1:
+      world: "world"
+      x: 100
+      y: 4
+      z: 200
+      yaw: 0
+      pitch: 0
+    pos2:
+      world: "world"
+      x: 180
+      y: 40
+      z: 280
+      yaw: 0
+      pitch: 0
+    spawns:
+      - world: "world"
+        x: 120.5
+        y: -60
+        z: 240.5
+        yaw: 90
+        pitch: 0
+      - world: "world"
+        x: 160.5
+        y: -60
+        z: 240.5
+        yaw: -90
+        pitch: 0

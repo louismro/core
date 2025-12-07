@@ -1,0 +1,117 @@
+kits:
+  NoDebuff:
+    display-name: "&eNoDebuff"
+    icon: "POTION:16421"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Debuff:
+    display-name: "&cDebuff"
+    icon: "POTION:16388"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Gapple:
+    display-name: "&6Gapple"
+    icon: "GOLDEN_APPLE"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  BuildUHC:
+    display-name: "&6BuildUHC"
+    icon: "COBBLESTONE"
+    editable: false
+    build: true
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Combo:
+    display-name: "&aCombo"
+    icon: "BLAZE_ROD"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: true
+    
+  Sumo:
+    display-name: "&9Sumo"
+    icon: "LEASH"
+    editable: false
+    build: false
+    hunger: false
+    fall: false
+    regeneration: false
+    
+  Boxing:
+    display-name: "&cBoxing"
+    icon: "IRON_SWORD"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: true
+    
+  Archer:
+    display-name: "&2Archer"
+    icon: "BOW"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Axe:
+    display-name: "&4Axe"
+    icon: "DIAMOND_AXE"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Soup:
+    display-name: "&dSoup"
+    icon: "MUSHROOM_STEW"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Classic:
+    display-name: "&7Classic"
+    icon: "DIAMOND_SWORD"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: false
+    
+  Stick:
+    display-name: "&eStick"
+    icon: "STICK"
+    editable: false
+    build: false
+    hunger: false
+    fall: true
+    regeneration: true
+    
+  SpleefTNT:
+    display-name: "&cSpleef TNT"
+    icon: "TNT"
+    editable: false
+    build: false
+    hunger: false
+    fall: false
+    regeneration: false

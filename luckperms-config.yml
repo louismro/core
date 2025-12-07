@@ -1,0 +1,362 @@
+# =====================================================
+# Configuration LuckPerms pour PracticeCore
+# Serveur Practice - Spigot 1.21.8
+# =====================================================
+#
+# INSTALLATION :
+# 1. Installez LuckPerms sur votre serveur
+# 2. Démarrez le serveur une première fois
+# 3. Utilisez les commandes ci-dessous dans la console ou en jeu
+#
+# =====================================================
+
+# =====================================================
+# GROUPES DE BASE
+# =====================================================
+
+# --- GROUPE DEFAULT (Joueurs de base) ---
+# /lp creategroup default
+# /lp group default permission set practice.use true
+# /lp group default meta setprefix "&7[Joueur] &7"
+# /lp group default meta setsuffix ""
+# /lp group default meta setweight 1
+
+# --- GROUPE VIP ---
+# /lp creategroup vip
+# /lp group vip parent add default
+# /lp group vip permission set practice.vip true
+# /lp group vip permission set practice.vip.chat true
+# /lp group vip permission set practice.vip.color true
+# /lp group vip permission set practice.vip.queue.bypass true
+# /lp group vip meta setprefix "&a[VIP] &a"
+# /lp group vip meta setsuffix " &7✦"
+# /lp group vip meta setweight 10
+
+# --- GROUPE VIP+ ---
+# /lp creategroup vip+
+# /lp group vip+ parent add vip
+# /lp group vip+ permission set practice.premium true
+# /lp group vip+ permission set practice.premium.chat true
+# /lp group vip+ permission set practice.premium.color true
+# /lp group vip+ permission set practice.premium.effects true
+# /lp group vip+ meta setprefix "&b[VIP+] &b"
+# /lp group vip+ meta setsuffix " &b✦✦"
+# /lp group vip+ meta setweight 20
+
+# --- GROUPE MVP ---
+# /lp creategroup mvp
+# /lp group mvp parent add vip+
+# /lp group mvp permission set practice.premium.priority true
+# /lp group mvp permission set practice.mvp true
+# /lp group mvp meta setprefix "&d[MVP] &d"
+# /lp group mvp meta setsuffix " &d✦✦✦"
+# /lp group mvp meta setweight 30
+
+# --- GROUPE HELPER ---
+# /lp creategroup helper
+# /lp group helper parent add vip+
+# /lp group helper permission set practice.staff true
+# /lp group helper permission set practice.alert true
+# /lp group helper permission set practice.staffchat true
+# /lp group helper permission set practice.freeze true
+# /lp group helper permission set practice.vanish true
+# /lp group helper permission set practice.invsee true
+# /lp group helper meta setprefix "&9[Helper] &9"
+# /lp group helper meta setsuffix ""
+# /lp group helper meta setweight 40
+
+# --- GROUPE MOD (Modérateur) ---
+# /lp creategroup mod
+# /lp group mod parent add helper
+# /lp group mod permission set practice.ban true
+# /lp group mod permission set practice.kick true
+# /lp group mod permission set practice.mute true
+# /lp group mod permission set practice.warn true
+# /lp group mod permission set practice.tp true
+# /lp group mod permission set practice.tphere true
+# /lp group mod meta setprefix "&2[Mod] &2"
+# /lp group mod meta setsuffix ""
+# /lp group mod meta setweight 50
+
+# --- GROUPE ADMIN ---
+# /lp creategroup admin
+# /lp group admin parent add mod
+# /lp group admin permission set practice.admin true
+# /lp group admin permission set practice.admin.setspawn true
+# /lp group admin permission set practice.admin.arena true
+# /lp group admin permission set practice.gamemode true
+# /lp group admin permission set practice.fly true
+# /lp group admin permission set practice.god true
+# /lp group admin permission set practice.heal true
+# /lp group admin permission set practice.feed true
+# /lp group admin permission set practice.tpall true
+# /lp group admin permission set practice.clear true
+# /lp group admin permission set practice.broadcast true
+# /lp group admin permission set practice.speed true
+# /lp group admin permission set practice.eco true
+# /lp group admin permission set practice.time true
+# /lp group admin permission set practice.weather true
+# /lp group admin permission set practice.sudo true
+# /lp group admin permission set practice.killall true
+# /lp group admin permission set practice.give true
+# /lp group admin permission set practice.enderchest true
+# /lp group admin permission set practice.kickall true
+# /lp group admin permission set practice.rename true
+# /lp group admin permission set practice.lore true
+# /lp group admin permission set practice.event true
+# /lp group admin meta setprefix "&c[Admin] &c"
+# /lp group admin meta setsuffix ""
+# /lp group admin meta setweight 100
+
+# --- GROUPE OWNER ---
+# /lp creategroup owner
+# /lp group owner parent add admin
+# /lp group owner permission set * true
+# /lp group owner permission set practice.* true
+# /lp group owner meta setprefix "&4&l[OWNER] &4"
+# /lp group owner meta setsuffix " &6⭐"
+# /lp group owner meta setweight 1000
+
+# =====================================================
+# ATTRIBUTION DES GROUPES AUX JOUEURS
+# =====================================================
+
+# Pour attribuer un groupe à un joueur :
+# /lp user <pseudo> parent set <groupe>
+#
+# Exemples :
+# /lp user Louis parent set owner
+# /lp user PlayerVIP parent set vip
+# /lp user ModeratorName parent set mod
+
+# Pour ajouter un groupe secondaire (sans retirer le groupe actuel) :
+# /lp user <pseudo> parent add <groupe>
+
+# =====================================================
+# PERMISSIONS TEMPORAIRES
+# =====================================================
+
+# Pour donner un groupe temporaire (exemple: VIP pour 30 jours) :
+# /lp user <pseudo> parent addtemp vip 30d
+
+# Pour donner une permission temporaire :
+# /lp user <pseudo> permission settemp practice.vip true 30d
+
+# =====================================================
+# COMMANDES UTILES
+# =====================================================
+
+# Voir les permissions d'un joueur :
+# /lp user <pseudo> permission info
+
+# Voir les groupes d'un joueur :
+# /lp user <pseudo> parent info
+
+# Retirer un groupe :
+# /lp user <pseudo> parent remove <groupe>
+
+# Lister tous les groupes :
+# /lp listgroups
+
+# Voir les permissions d'un groupe :
+# /lp group <groupe> permission info
+
+# Rechercher qui a une permission :
+# /lp search <permission>
+
+# =====================================================
+# SCRIPT D'INSTALLATION RAPIDE
+# =====================================================
+# Copiez-collez ces commandes dans la console du serveur
+
+# === CRÉATION DES GROUPES ===
+lp creategroup default
+lp creategroup vip
+lp creategroup vip+
+lp creategroup mvp
+lp creategroup helper
+lp creategroup mod
+lp creategroup admin
+lp creategroup owner
+
+# === DEFAULT ===
+lp group default permission set practice.use true
+lp group default meta setprefix "&7[Joueur] &7"
+lp group default meta setweight 1
+
+# === VIP ===
+lp group vip parent add default
+lp group vip permission set practice.vip true
+lp group vip permission set practice.vip.chat true
+lp group vip permission set practice.vip.color true
+lp group vip permission set practice.vip.queue.bypass true
+lp group vip meta setprefix "&a[VIP] &a"
+lp group vip meta setsuffix " &7✦"
+lp group vip meta setweight 10
+
+# === VIP+ ===
+lp group vip+ parent add vip
+lp group vip+ permission set practice.premium true
+lp group vip+ permission set practice.premium.chat true
+lp group vip+ permission set practice.premium.color true
+lp group vip+ permission set practice.premium.effects true
+lp group vip+ meta setprefix "&b[VIP+] &b"
+lp group vip+ meta setsuffix " &b✦✦"
+lp group vip+ meta setweight 20
+
+# === MVP ===
+lp group mvp parent add vip+
+lp group mvp permission set practice.mvp true
+lp group mvp meta setprefix "&d[MVP] &d"
+lp group mvp meta setsuffix " &d✦✦✦"
+lp group mvp meta setweight 30
+
+# === HELPER ===
+lp group helper parent add vip+
+lp group helper permission set practice.staff true
+lp group helper permission set practice.alert true
+lp group helper permission set practice.staffchat true
+lp group helper permission set practice.freeze true
+lp group helper permission set practice.vanish true
+lp group helper permission set practice.invsee true
+lp group helper meta setprefix "&9[Helper] &9"
+lp group helper meta setweight 40
+
+# === MOD ===
+lp group mod parent add helper
+lp group mod permission set practice.ban true
+lp group mod permission set practice.kick true
+lp group mod permission set practice.mute true
+lp group mod permission set practice.warn true
+lp group mod permission set practice.tp true
+lp group mod permission set practice.tphere true
+lp group mod meta setprefix "&2[Mod] &2"
+lp group mod meta setweight 50
+
+# === ADMIN ===
+lp group admin parent add mod
+lp group admin permission set practice.admin true
+lp group admin permission set practice.admin.setspawn true
+lp group admin permission set practice.admin.arena true
+lp group admin permission set practice.gamemode true
+lp group admin permission set practice.fly true
+lp group admin permission set practice.god true
+lp group admin permission set practice.heal true
+lp group admin permission set practice.feed true
+lp group admin permission set practice.tpall true
+lp group admin permission set practice.clear true
+lp group admin permission set practice.broadcast true
+lp group admin permission set practice.speed true
+lp group admin permission set practice.eco true
+lp group admin permission set practice.time true
+lp group admin permission set practice.weather true
+lp group admin permission set practice.sudo true
+lp group admin permission set practice.killall true
+lp group admin permission set practice.give true
+lp group admin permission set practice.enderchest true
+lp group admin permission set practice.kickall true
+lp group admin permission set practice.rename true
+lp group admin permission set practice.lore true
+lp group admin permission set practice.event true
+lp group admin meta setprefix "&c[Admin] &c"
+lp group admin meta setweight 100
+
+# === OWNER ===
+lp group owner parent add admin
+lp group owner permission set * true
+lp group owner permission set practice.* true
+lp group owner meta setprefix "&4&l[OWNER] &4"
+lp group owner meta setsuffix " &6⭐"
+lp group owner meta setweight 1000
+
+# =====================================================
+# FIN DU SCRIPT
+# =====================================================
+
+# Définir le groupe par défaut :
+# /lp group default setweight 1
+
+# Pour que les nouveaux joueurs aient le groupe "default" :
+# Dans le fichier config.yml de LuckPerms, vérifiez :
+# default-assignments:
+#   default: true
+
+# =====================================================
+# PERMISSIONS PAR CATÉGORIE
+# =====================================================
+
+# JOUEUR (default) :
+# - Accès aux commandes de base du plugin
+# - /party, /queue, /stats, /profile, /spawn, etc.
+
+# VIP :
+# - Chat coloré
+# - Bypass queue si plein
+# - Accès prioritaire aux features
+# + Toutes les permissions de DEFAULT
+
+# VIP+ / PREMIUM :
+# - Effets cosmétiques premium
+# - Titres exclusifs
+# - Traînées spéciales
+# + Toutes les permissions de VIP
+
+# MVP :
+# - Accès prioritaire serveur
+# - Features MVP exclusives
+# + Toutes les permissions de VIP+
+
+# HELPER :
+# - Freeze joueurs
+# - Voir inventaires
+# - Chat staff
+# - Vanish
+# + Toutes les permissions de VIP+
+
+# MOD :
+# - Ban/Kick/Mute/Warn
+# - Téléportations
+# - Gestion modération
+# + Toutes les permissions de HELPER
+
+# ADMIN :
+# - Gestion arènes
+# - Gestion économie
+# - Commandes admin complètes
+# - Events
+# + Toutes les permissions de MOD
+
+# OWNER :
+# - Accès complet à toutes les permissions
+# + Toutes les permissions de ADMIN
+
+# =====================================================
+# NOTES IMPORTANTES
+# =====================================================
+
+# 1. Redémarrez le serveur après avoir exécuté les commandes
+# 2. Utilisez /lp sync pour synchroniser les permissions
+# 3. Les préfixes s'affichent avec un plugin de chat compatible (EssentialsChat, ChatControl, etc.)
+# 4. Les weights déterminent l'ordre d'affichage (plus haut = prioritaire)
+# 5. Pour personnaliser les couleurs, modifiez les codes couleur dans les préfixes
+
+# Codes couleur Minecraft :
+# &0 = Noir          &8 = Gris foncé
+# &1 = Bleu foncé    &9 = Bleu
+# &2 = Vert foncé    &a = Vert
+# &3 = Cyan foncé    &b = Cyan
+# &4 = Rouge foncé   &c = Rouge
+# &5 = Violet foncé  &d = Rose
+# &6 = Or            &e = Jaune
+# &7 = Gris          &f = Blanc
+# &l = Gras          &o = Italique
+# &n = Souligné      &m = Barré
+# &k = Aléatoire     &r = Reset
+
+# =====================================================
+# SUPPORT
+# =====================================================
+# Pour plus d'informations sur LuckPerms :
+# - Wiki : https://luckperms.net/wiki/
+# - Discord : https://discord.gg/luckperms
+# - Documentation commandes : https://luckperms.net/wiki/Command-Usage

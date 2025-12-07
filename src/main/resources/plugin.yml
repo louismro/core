@@ -1,8 +1,8 @@
 name: PracticeCore
 version: '${project.version}'
 main: fr.louis.practice.PracticeCore
-api-version: 1.8
-softdepend: [LuckPerms, AdvancedEnchantments, TownPractice]
+api-version: 1.21
+softdepend: [LuckPerms, AdvancedEnchantments]
 authors: [Louis]
 description: Core practice moderne avec expérience Kohi/Minemen
 
@@ -27,6 +27,9 @@ commands:
   spectate:
     description: Spectater un match
     aliases: [spec]
+  stopspec:
+    description: Arrêter de spectater
+    aliases: [stopspectate]
   settings:
     description: Gérer ses paramètres
   kit:
@@ -37,3 +40,431 @@ commands:
     description: Voir son ping
   match:
     description: Informations du match
+  rematch:
+    description: Accepter un rematch
+  inventory:
+    description: Voir l'inventaire d'un joueur après match
+    aliases: [inv]
+  setspawn:
+    description: Définir le spawn (Admin)
+    permission: practice.admin.setspawn
+  arena:
+    description: Gérer les arènes (Admin)
+    permission: practice.admin.arena
+  clan:
+    description: Gérer votre clan
+    aliases: [c]
+  tournament:
+    description: Gérer les tournois
+    aliases: [tourney, t]
+  quests:
+    description: Voir vos quêtes journalières
+    aliases: [quest, dailies]
+  shop:
+    description: Acheter des cosmétiques
+    aliases: [store]
+  coins:
+    description: Voir vos coins
+    aliases: [balance, money]
+  ffa:
+    description: Free For All events
+    aliases: [freeforall]
+  daily:
+    description: Récompense quotidienne
+    aliases: [dailyreward, reward]
+  achievements:
+    description: Voir vos succès
+    aliases: [achievement, success, ach]
+  season:
+    description: Info saison et rangs
+    aliases: [rank, ranked]
+  loadout:
+    description: Gérer vos loadouts de kits
+    aliases: [lo, kitloadout]
+  chat:
+    description: Gérer les paramètres de chat
+    aliases: [ch]
+  profile:
+    description: Voir le profil d'un joueur
+    aliases: [p, prof]
+  crate:
+    description: Gérer vos crates
+    aliases: [cr, crates]
+  boost:
+    description: Voir vos boosts actifs
+    aliases: [boosts]
+  friend:
+    description: Gérer vos amis
+    aliases: [f, friends]
+  report:
+    description: Reporter un joueur
+    aliases: [rep]
+  build:
+    description: Activer/désactiver le mode build (Admin)
+    permission: practice.build
+  ban:
+    description: Bannir un joueur
+  kick:
+    description: Expulser un joueur
+  mute:
+    description: Mute un joueur
+  warn:
+    description: Avertir un joueur
+    aliases: [warning]
+  punishhistory:
+    description: Voir l'historique de punitions
+    aliases: [ph, history]
+  title:
+    description: Gérer vos titres cosmétiques
+    aliases: [titles]
+  warp:
+    description: Téléporter à un warp
+    aliases: [warps]
+  home:
+    description: Téléporter à votre home
+    aliases: [h]
+  sethome:
+    description: Définir un home
+  delhome:
+    description: Supprimer un home
+    aliases: [deletehome, removehome]
+  homes:
+    description: Voir tous vos homes
+    aliases: [homelist]
+  tpa:
+    description: Demander une téléportation
+  tpahere:
+    description: Demander qu'un joueur se téléporte à vous
+  tpaccept:
+    description: Accepter une demande de téléportation
+    aliases: [tpyes]
+  tpdeny:
+    description: Refuser une demande de téléportation
+    aliases: [tpno]
+  back:
+    description: Retourner à votre position précédente
+  gamemode:
+    description: Changer de gamemode
+    aliases: [gm]
+    permission: practice.gamemode
+  fly:
+    description: Activer/désactiver le mode vol
+    permission: practice.fly
+  god:
+    description: Activer/désactiver le mode dieu
+    permission: practice.god
+  heal:
+    description: Soigner un joueur
+    permission: practice.heal
+  feed:
+    description: Nourrir un joueur
+    permission: practice.feed
+  tp:
+    description: Téléporter à un joueur
+    permission: practice.tp
+  tphere:
+    description: Téléporter un joueur à vous
+    permission: practice.tphere
+  tpall:
+    description: Téléporter tous les joueurs à vous
+    permission: practice.tpall
+  invsee:
+    description: Voir l'inventaire d'un joueur
+    aliases: [inv]
+    permission: practice.invsee
+  clear:
+    description: Vider l'inventaire
+    aliases: [ci]
+    permission: practice.clear
+  broadcast:
+    description: Faire une annonce globale
+    aliases: [bc, announce]
+    permission: practice.broadcast
+  vanish:
+    description: Se rendre invisible
+    aliases: [v]
+    permission: practice.vanish
+  speed:
+    description: Changer votre vitesse
+    permission: practice.speed
+  eco:
+    description: Gérer l'économie
+    aliases: [economy]
+    permission: practice.eco
+  pay:
+    description: Envoyer de l'argent
+  baltop:
+    description: Top richesse
+    aliases: [moneytop]
+  time:
+    description: Gérer le temps
+    permission: practice.time
+  weather:
+    description: Gérer la météo
+    permission: practice.weather
+  sudo:
+    description: Forcer une commande
+    permission: practice.sudo
+  killall:
+    description: Supprimer les entités
+    aliases: [butcher]
+    permission: practice.killall
+  give:
+    description: Donner un item
+    permission: practice.give
+  enderchest:
+    description: Ouvrir un enderchest
+    aliases: [ec, echest]
+    permission: practice.enderchest
+  freeze:
+    description: Freeze un joueur
+    permission: practice.freeze
+  kickall:
+    description: Expulser tous les joueurs
+    permission: practice.kickall
+  rename:
+    description: Renommer un item
+    permission: practice.rename
+  lore:
+    description: Modifier le lore
+    permission: practice.lore
+  trail:
+    description: Gérer vos traînées
+    aliases: [trails]
+  bot:
+    description: S'entraîner contre un bot
+    aliases: [practicebot]
+  killeffect:
+    description: Effets de kill cosmétiques
+    aliases: [ke, deatheffect]
+  hitsound:
+    description: Sons de hit personnalisés
+    aliases: [hs]
+  matchhistory:
+    description: Voir l'historique de matchs
+    aliases: [mh, history]
+  staffmode:
+    description: Mode modération
+    aliases: [mod, modmode]
+    permission: practice.staff
+  alert:
+    description: Alerte staff
+    aliases: [staffalert]
+    permission: practice.alert
+  sc:
+    description: Chat staff
+    aliases: [staffchat]
+    permission: practice.staffchat
+  event:
+    description: Gérer les événements globaux
+    permission: practice.event
+  ping:
+    description: Voir son ping ou celui d'un autre joueur
+
+permissions:
+  practice.*:
+    description: Accès complet au plugin
+    children:
+      practice.admin: true
+      practice.staff: true
+      practice.vip: true
+      practice.premium: true
+  
+  practice.admin:
+    description: Permissions administrateur
+    children:
+      practice.admin.setspawn: true
+      practice.admin.arena: true
+      practice.gamemode: true
+      practice.fly: true
+      practice.god: true
+      practice.heal: true
+      practice.feed: true
+      practice.tp: true
+      practice.tphere: true
+      practice.tpall: true
+      practice.invsee: true
+      practice.clear: true
+      practice.broadcast: true
+      practice.vanish: true
+      practice.speed: true
+      practice.eco: true
+      practice.time: true
+      practice.weather: true
+      practice.sudo: true
+      practice.killall: true
+      practice.give: true
+      practice.enderchest: true
+      practice.freeze: true
+      practice.kickall: true
+      practice.rename: true
+      practice.lore: true
+      practice.event: true
+      practice.staff: true
+  
+  practice.staff:
+    description: Permissions modérateur
+    children:
+      practice.alert: true
+      practice.staffchat: true
+      practice.freeze: true
+      practice.vanish: true
+      practice.invsee: true
+  
+  practice.vip:
+    description: Permissions VIP
+    children:
+      practice.vip.chat: true
+      practice.vip.color: true
+      practice.vip.queue.bypass: true
+  
+  practice.premium:
+    description: Permissions Premium
+    children:
+      practice.premium.chat: true
+      practice.premium.color: true
+      practice.premium.effects: true
+  
+  practice.admin.setspawn:
+    description: Définir le spawn
+    default: op
+  
+  practice.admin.arena:
+    description: Gérer les arènes
+    default: op
+  
+  practice.gamemode:
+    description: Changer de gamemode
+    default: op
+  
+  practice.fly:
+    description: Voler
+    default: op
+  
+  practice.god:
+    description: Mode invincible
+    default: op
+  
+  practice.heal:
+    description: Se soigner
+    default: op
+  
+  practice.feed:
+    description: Se nourrir
+    default: op
+  
+  practice.tp:
+    description: Téléportation
+    default: op
+  
+  practice.tphere:
+    description: Téléporter ici
+    default: op
+  
+  practice.tpall:
+    description: Téléporter tous
+    default: op
+  
+  practice.invsee:
+    description: Voir inventaire
+    default: op
+  
+  practice.clear:
+    description: Vider inventaire
+    default: op
+  
+  practice.broadcast:
+    description: Annonces globales
+    default: op
+  
+  practice.vanish:
+    description: Invisibilité
+    default: op
+  
+  practice.speed:
+    description: Modifier vitesse
+    default: op
+  
+  practice.eco:
+    description: Gérer économie
+    default: op
+  
+  practice.time:
+    description: Gérer temps
+    default: op
+  
+  practice.weather:
+    description: Gérer météo
+    default: op
+  
+  practice.sudo:
+    description: Forcer commandes
+    default: op
+  
+  practice.killall:
+    description: Tuer entités
+    default: op
+  
+  practice.give:
+    description: Donner items
+    default: op
+  
+  practice.enderchest:
+    description: Accès enderchest
+    default: op
+  
+  practice.freeze:
+    description: Freeze joueurs
+    default: op
+  
+  practice.kickall:
+    description: Kick tous
+    default: op
+  
+  practice.rename:
+    description: Renommer items
+    default: op
+  
+  practice.lore:
+    description: Modifier lore
+    default: op
+  
+  practice.event:
+    description: Gérer events
+    default: op
+  
+  practice.staff:
+    description: Accès staff
+    default: op
+  
+  practice.alert:
+    description: Alertes staff
+    default: op
+  
+  practice.staffchat:
+    description: Chat staff
+    default: op
+  
+  practice.vip.chat:
+    description: Chat VIP
+    default: false
+  
+  practice.vip.color:
+    description: Couleurs VIP
+    default: false
+  
+  practice.vip.queue.bypass:
+    description: Bypass queue
+    default: false
+  
+  practice.premium.chat:
+    description: Chat premium
+    default: false
+  
+  practice.premium.color:
+    description: Couleurs premium
+    default: false
+  
+  practice.premium.effects:
+    description: Effets premium
+    default: false

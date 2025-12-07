@@ -4,15 +4,15 @@
 
 # Paramètres généraux
 general:
-  server-name: "&b&lPractice Server"
+  server-name: "<gradient:#00d4ff:#0066ff><bold>Hyko Practice</bold></gradient>"
   max-party-size: 10
   allow-spectators: true
   spawn-world: "world"
   spawn-location:
-    x: 0.5
-    y: 100.0
-    z: 0.5
-    yaw: 0.0
+    x: 157.5
+    y: -44.0
+    z: -36.5
+    yaw: 270.0
     pitch: 0.0
 
 # Système de knockback (Style Kohi/Minemen)
@@ -154,6 +154,69 @@ queues:
     build: false
     kit: "Sumo"
     elo-enabled: false
+  Gapple-Ranked:
+    display-name: "&6Gapple &7(Ranked)"
+    icon: "GOLDEN_APPLE"
+    ranked: true
+    build: false
+    kit: "Gapple"
+    elo-enabled: true
+  Gapple-Unranked:
+    display-name: "&6Gapple &7(Unranked)"
+    icon: "GOLDEN_APPLE"
+    ranked: false
+    build: false
+    kit: "Gapple"
+    elo-enabled: false
+  Boxing-Unranked:
+    display-name: "&cBoxing &7(Unranked)"
+    icon: "AIR"
+    ranked: false
+    build: false
+    kit: "Boxing"
+    elo-enabled: false
+  Archer-Ranked:
+    display-name: "&aArcher &7(Ranked)"
+    icon: "BOW"
+    ranked: true
+    build: false
+    kit: "Archer"
+    elo-enabled: true
+  Axe-Unranked:
+    display-name: "&cAxe &7(Unranked)"
+    icon: "DIAMOND_AXE"
+    ranked: false
+    build: false
+    kit: "Axe"
+    elo-enabled: false
+  Soup-Unranked:
+    display-name: "&eSoup &7(Unranked)"
+    icon: "MUSHROOM_STEW"
+    ranked: false
+    build: false
+    kit: "Soup"
+    elo-enabled: false
+  Classic-Ranked:
+    display-name: "&bClassic &7(Ranked)"
+    icon: "IRON_SWORD"
+    ranked: true
+    build: false
+    kit: "Classic"
+    elo-enabled: true
+  Stick-Unranked:
+    display-name: "&eStick &7(Unranked)"
+    icon: "STICK"
+    ranked: false
+    build: false
+    kit: "Stick"
+    elo-enabled: false
+  SpleefTNT-Unranked:
+    display-name: "&cSpleef TNT &7(Unranked)"
+    icon: "TNT"
+    ranked: false
+    build: false
+    kit: "SpleefTNT"
+    elo-enabled: false
 
 # Events
 events:
@@ -225,72 +288,125 @@ statistics:
 
 # Messages
 messages:
-  prefix: "&b&lPractice &8» &7"
-  queue-joined: "Vous avez rejoint la queue &e{queue}"
+  prefix: "<gradient:#00d4ff:#0066ff><bold>Hyko</bold></gradient> <dark_gray>»</dark_gray> <gray>"
+  queue-joined: "Vous avez rejoint la queue <yellow>{queue}"
   queue-left: "Vous avez quitté la queue"
-  match-found: "Match trouvé! &7(&e{opponent}&7)"
-  match-start: "Le match commence dans &e{time}&7..."
-  match-end-winner: "&aVous avez gagné! &7(+{elo} ELO)"
-  match-end-loser: "&cVous avez perdu! &7({elo} ELO)"
+  match-found: "Match trouvé! <gray>(<yellow>{opponent}</yellow>)</gray>"
+  match-start: "Le match commence dans <yellow>{time}</yellow><gray>..."
+  match-end-winner: "<green>Vous avez gagné! <gray>(+{elo} ELO)"
+  match-end-loser: "<red>Vous avez perdu! <gray>({elo} ELO)"
   party-created: "Partie créée!"
   party-disbanded: "Partie dissoute"
-  party-joined: "&a{player} &7a rejoint la partie"
-  party-left: "&c{player} &7a quitté la partie"
-  duel-sent: "Demande de duel envoyée à &e{player}"
-  duel-received: "&e{player} &7vous défie en duel! &a[ACCEPTER] &c[REFUSER]"
-  combat-tagged: "Vous êtes en combat pendant &e{time} &7secondes!"
-  pearl-cooldown: "Pearl cooldown: &e{time}s"
+  party-joined: "<green>{player}</green> <gray>a rejoint la partie"
+  party-left: "<red>{player}</red> <gray>a quitté la partie"
+  duel-sent: "Demande de duel envoyée à <yellow>{player}"
+  duel-received: "<yellow>{player}</yellow> <gray>vous défie en duel! <green>[ACCEPTER]</green> <red>[REFUSER]"
+  combat-tagged: "Vous êtes en combat pendant <yellow>{time}</yellow> <gray>secondes!"
+  pearl-cooldown: "Pearl cooldown: <yellow>{time}s"
   
 # Scoreboard
 scoreboard:
   enabled: true
-  title: "&b&lPRACTICE"
+  title: "<gradient:#00d4ff:#0066ff><bold>HYKO</bold></gradient>"
   update-interval: 20 # ticks
   
   spawn-lines:
     - ""
-    - "&7En ligne: &f{online}"
-    - "&7En combat: &f{fighting}"
+    - "&8&m--------------------"
     - ""
-    - "&7Votre ELO:"
-    - "  &eNoDebuff: &f{elo_nodebuff}"
-    - "  &eDebuff: &f{elo_debuff}"
+    - "&f&lSTATISTIQUES"
     - ""
-    - "&7Killstreak: &f{streak}"
+    - "&7Coins: &6{coins}"
+    - "&7Killstreak: &e{streak}"
+    - "&7Record: &6{best_streak}"
+    - "&7Victoires: &a{total_wins}"
+    - "&7Défaites: &c{total_losses}"
+    - "&7Ratio K/D: &b{kd_ratio}"
     - ""
-    - "&eplay.server.com"
+    - "&f&lSERVEUR"
+    - ""
+    - "&7En ligne: &b{online}"
+    - "&7En combat: &c{fighting}"
+    - "&7En queue: &e{queued}"
+    - "&7Ping: &a{ping}ms"
+    - ""
+    - "&8&m--------------------"
+    - ""
   
   queue-lines:
     - ""
-    - "&7Queue: &f{queue}"
-    - "&7En recherche..."
+    - "&8&m--------------------"
     - ""
-    - "&7Temps: &f{time}"
+    - "&f&lQUEUE {queue}"
+    - ""
+    - "&7Temps: &b{time}s"
+    - "&7Range ELO: &e±{range}"
     - "&7Votre ELO: &f{elo}"
-    - "&7Range: &f±{range}"
     - ""
-    - "&eplay.server.com"
+    - "&7En recherche: &a{queued}"
+    - "&7Ping: &a{ping}ms"
+    - "&7Coins: &6{coins}"
+    - ""
+    - "&8&m--------------------"
+    - ""
   
   match-lines:
     - ""
-    - "&7Adversaire: &f{opponent}"
-    - "&7Ping: &a{your_ping}ms &7/ &c{opp_ping}ms"
+    - "&8&m--------------------"
     - ""
-    - "&7Durée: &f{duration}"
+    - "&f&lCOMBAT"
+    - ""
+    - "&7Adversaire: &c{opponent}"
+    - "&7Durée: &b{duration}"
+    - "&7Kit: &e{kit}"
+    - ""
+    - "&f&lVOTRE ÉTAT"
+    - ""
     - "&7Combo: &e{combo}"
+    - "&7Hits donnés: &a{hits_given}"
+    - "&7Hits reçus: &c{hits_taken}"
+    - "&7Potions: &d{your_pots}"
     - ""
-    - "&7Vos potions: &d{your_pots}"
-    - "&7Ses potions: &d{opp_pots}"
+    - "&f&lADVERSAIRE"
     - ""
-    - "&eplay.server.com"
+    - "&7Potions: &5{opp_pots}"
+    - "&7Ping: &a{your_ping}ms &8| &c{opp_ping}ms"
+    - ""
+    - "&8&m--------------------"
+    - ""
 
-# Base de données
-database:
-  type: "SQLITE" # SQLITE, MYSQL
-  mysql:
-    host: "localhost"
-    port: 3306
-    database: "practice"
-    username: "root"
-    password: "password"
-  save-interval: 300 # secondes
+# MongoDB (base de données unique)
+mongodb:
+  connection-string: "mongodb+srv://louismroczek:QAiBWwRFt2JuiuHG@cluster0.xvwvs.mongodb.net/practicecore?retryWrites=true&w=majority&authSource=admin"
+  database: "practicecore"
+  
+# Système de Coins et Shop
+economy:
+  enabled: true
+  starting-coins: 100
+  coins-per-win: 50
+  coins-per-kill: 10
+  coins-per-killstreak: 25
+  daily-bonus: 100
+
+# Système de Quêtes
+quests:
+  enabled: true
+  daily-quests: 3
+  reset-time: "00:00" # Heure de reset (format 24h)
+  notifications: true
+
+# Système de Clans
+clans:
+  enabled: true
+  max-members: 20
+  creation-cost: 1000
+  tag-max-length: 6
+  friendly-fire: false
+
+# Système de Tournois
+tournaments:
+  enabled: true
+  allowed-sizes: [4, 8, 16, 32, 64]
+  reward-multiplier: 100 # coins par joueur
+  min-elo-difference: 200
