@@ -41,6 +41,14 @@ Un plugin Minecraft practice complet et moderne pour Spigot 1.8.8, optimisé pou
 - **Choix du kit** : Sélection du kit pour le duel
 - **Accept/Deny** : Système de demande avec expiration
 
+### ✨ Système de Cosmétiques
+- **Kill Effects** : 10+ effets visuels à la mort (feu, lightning, explosion, coeurs, etc.)
+- **Trails** : Particules de suivi (flammes, fumée, eau, cœurs, enchantements)
+- **Hit Sounds** : Sons personnalisés lors des coups (ding, pop, crack, etc.)
+- **Titles** : Titres débloquables avec couleurs et raretés
+- **Boutique intégrée** : Achat avec coins gagnés en jeu
+- **Gestion complète** : Activation/désactivation, preview, gestion par joueur
+
 ### 📊 Scoreboard Dynamique
 - **États différents** : Spawn, Queue, Match, Spectating
 - **Informations en temps réel** :
@@ -65,6 +73,7 @@ Un plugin Minecraft practice complet et moderne pour Spigot 1.8.8, optimisé pou
   - Statistiques détaillées
   - Préférences joueurs
   - Killstreaks
+  - Cosmétiques achetés et équipés
 
 ### 🛠️ Intégrations
 - **LuckPerms** : Gestion des permissions
@@ -262,10 +271,10 @@ Ajustez dans `config.yml` :
 - [ ] Système de spectateur avancé
 - [ ] Leaderboards
 - [ ] Replay system
-- [] Anti-cheat intégré
+- [ ] Anti-cheat intégré
 - [ ] API pour développeurs
 - [ ] Support de parties custom
-- [ ] Système de cosmétiques
+- [x] Système de cosmétiques ✅
 
 ## 👨‍💻 Développement
 
