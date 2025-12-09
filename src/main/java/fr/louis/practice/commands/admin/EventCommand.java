@@ -31,29 +31,25 @@ public class EventCommand implements CommandExecutor {
         String action = args[0].toLowerCase();
         
         switch (action) {
-            case "start":
+            case "start" -> {
                 if (args.length < 3) {
                     sender.sendMessage("§cUsage: /event start <type> <durée minutes>");
                     return true;
                 }
                 
-                GlobalEvent.EventType type;
-                try {
-                    switch (args[1].toLowerCase()) {
-                        case "doublexp": type = GlobalEvent.EventType.DOUBLE_XP; break;
-                        case "doublecoins": type = GlobalEvent.EventType.DOUBLE_COINS; break;
-                        case "triplexp": type = GlobalEvent.EventType.TRIPLE_XP; break;
-                        case "happyhour": type = GlobalEvent.EventType.HAPPY_HOUR; break;
-                        case "weekend": type = GlobalEvent.EventType.WEEKEND_BOOST; break;
-                        case "special": type = GlobalEvent.EventType.SPECIAL; break;
-                        default:
-                            sender.sendMessage("§cType d'événement invalide.");
-                            return true;
+                GlobalEvent.EventType type = switch (args[1].toLowerCase()) {
+                    case "doublexp" -> GlobalEvent.EventType.DOUBLE_XP;
+                    case "doublecoins" -> GlobalEvent.EventType.DOUBLE_COINS;
+                    case "triplexp" -> GlobalEvent.EventType.TRIPLE_XP;
+                    case "happyhour" -> GlobalEvent.EventType.HAPPY_HOUR;
+                    case "weekend" -> GlobalEvent.EventType.WEEKEND_BOOST;
+                    case "special" -> GlobalEvent.EventType.SPECIAL;
+                    default -> {
+                        sender.sendMessage("§cType d'événement invalide.");
+                        yield null;
                     }
-                } catch (Exception e) {
-                    sender.sendMessage("§cType d'événement invalide.");
-                    return true;
-                }
+                };
+                if (type == null) return true;
                 
                 int duration;
                 try {
@@ -73,9 +69,9 @@ public class EventCommand implements CommandExecutor {
                 
                 plugin.getGlobalEventManager().startEvent(event);
                 sender.sendMessage("§a✓ Événement démarré pour " + duration + " minutes");
-                break;
+            }
                 
-            case "list":
+            case "list" -> {
                 var events = plugin.getGlobalEventManager().getActiveEvents();
                 
                 if (events.isEmpty()) {
@@ -87,43 +83,45 @@ public class EventCommand implements CommandExecutor {
                 for (GlobalEvent e : events) {
                     sender.sendMessage("§7- " + e.getType().getDisplayName() + " §e" + e.getTimeRemainingFormatted());
                 }
-                break;
+            }
                 
-            case "end":
+            case "end" -> {
                 if (args.length < 2) {
-                    sender.sendMessage("§cUsage: /event end <id>");
+                    sender.sendMessage("§cUsage: /event end <type>");
                     return true;
                 }
                 
-                // For simplicity, end all events of a type
-                GlobalEvent.EventType endType;
-                try {
-                    switch (args[1].toLowerCase()) {
-                        case "doublexp": endType = GlobalEvent.EventType.DOUBLE_XP; break;
-                        case "doublecoins": endType = GlobalEvent.EventType.DOUBLE_COINS; break;
-                        case "triplexp": endType = GlobalEvent.EventType.TRIPLE_XP; break;
-                        case "happyhour": endType = GlobalEvent.EventType.HAPPY_HOUR; break;
-                        case "weekend": endType = GlobalEvent.EventType.WEEKEND_BOOST; break;
-                        case "special": endType = GlobalEvent.EventType.SPECIAL; break;
-                        default:
-                            sender.sendMessage("§cType d'événement invalide.");
-                            return true;
+                GlobalEvent.EventType endType = switch (args[1].toLowerCase()) {
+                    case "doublexp" -> GlobalEvent.EventType.DOUBLE_XP;
+                    case "doublecoins" -> GlobalEvent.EventType.DOUBLE_COINS;
+                    case "triplexp" -> GlobalEvent.EventType.TRIPLE_XP;
+                    case "happyhour" -> GlobalEvent.EventType.HAPPY_HOUR;
+                    case "weekend" -> GlobalEvent.EventType.WEEKEND_BOOST;
+                    case "special" -> GlobalEvent.EventType.SPECIAL;
+                    default -> {
+                        sender.sendMessage("§cType d'événement invalide.");
+                        yield null;
                     }
-                } catch (Exception e) {
-                    sender.sendMessage("§cType d'événement invalide.");
-                    return true;
+                };
+                if (endType == null) return true;
+                
+                var activeEvents = plugin.getGlobalEventManager().getActiveEvents();
+                boolean found = false;
+                for (GlobalEvent evt : activeEvents) {
+                    if (evt.getType() == endType) {
+                        plugin.getGlobalEventManager().endEvent(evt.getId());
+                        found = true;
+                    }
                 }
                 
-                plugin.getGlobalEventManager().getActiveEvents().stream()
-                    .filter(e -> e.getType() == endType)
-                    .forEach(e -> plugin.getGlobalEventManager().endEvent(e.getId()));
+                if (found) {
+                    sender.sendMessage("§a✓ Événements de type " + endType.getDisplayName() + " terminés");
+                } else {
+                    sender.sendMessage("§cAucun événement actif de ce type.");
+                }
+            }
                 
-                sender.sendMessage("§a✓ Événement terminé");
-                break;
-                
-            default:
-                sender.sendMessage("§cAction invalide: start, end, list");
-                break;
+            default -> sender.sendMessage("§cAction invalide: start, end, list");
         }
         
         return true;
